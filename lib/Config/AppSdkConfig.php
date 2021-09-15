@@ -128,6 +128,7 @@ class AppSdkConfig
             for ($i = 0; $i < count($data['isv_private_key']); $i++) {
                 $privateKeyConfig = $data['isv_private_key'][$i];
                 $certs = ConfigUtils::loadPrivateKey($privateKeyConfig);
+                $certs[1]=str_replace(["-----BEGIN PRIVATE KEY-----\n","\n-----END PRIVATE KEY-----\n"],['',''],$certs[1]);
                 $privateKeys[$certs[0]] = $certs[1];
                 if ($i == 0) {
                     $this->defaultIsvPrivateKey = $certs[1];
