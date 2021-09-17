@@ -71,6 +71,10 @@ class RegisterQueryRequestMarshaller implements RequestMarshaller
         }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
+        if($request->getRequestNo() != null){
+            $internalRequest->addParameter('requestNo', ObjectSerializer::sanitizeForSerialization($request->getRequestNo(), 'string'));
+        }
+
         return $internalRequest;
     }
 }
