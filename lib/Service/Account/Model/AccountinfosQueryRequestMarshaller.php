@@ -71,6 +71,9 @@ class AccountinfosQueryRequestMarshaller implements RequestMarshaller
         }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
+        if($request->getMerchantNo() != null){
+            $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
         return $internalRequest;
     }
 }

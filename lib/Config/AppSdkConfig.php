@@ -4,7 +4,7 @@
 namespace Yeepay\Yop\Sdk\Config;
 
 
-use Yeepay\Yop\Sdk\Config\support\ConfigUtils;
+use Yeepay\Yop\Sdk\Config\Support\ConfigUtils;
 use Yeepay\Yop\Sdk\Exception\YopClientException;
 
 class AppSdkConfig

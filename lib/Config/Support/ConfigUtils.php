@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Yeepay\Yop\Sdk\Config\support;
+namespace Yeepay\Yop\Sdk\Config\Support;
 
 
 use Yeepay\Yop\Sdk\Exception\YopClientException;
