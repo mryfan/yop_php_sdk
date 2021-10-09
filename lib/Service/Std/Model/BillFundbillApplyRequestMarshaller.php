@@ -78,6 +78,9 @@ class BillFundbillApplyRequestMarshaller implements RequestMarshaller
         if($request->getMerchantNo() != null){
             $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
         }
+        if($request->getSubMerchantNo() != null){
+            $internalRequest->addParameter('subMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getSubMerchantNo(), 'string'));
+        }
         if($request->getAccountType() != null){
             $internalRequest->addParameter('accountType', ObjectSerializer::sanitizeForSerialization($request->getAccountType(), 'string'));
         }

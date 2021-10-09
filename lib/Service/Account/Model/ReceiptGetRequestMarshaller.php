@@ -69,6 +69,15 @@ class ReceiptGetRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getParentMerchantNo() != null){
+            $internalRequest->addParameter('parentMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getParentMerchantNo(), 'string'));
+        }
+        if($request->getOrderNo() != null){
+            $internalRequest->addParameter('orderNo', ObjectSerializer::sanitizeForSerialization($request->getOrderNo(), 'string'));
+        }
+        if($request->getTradeType() != null){
+            $internalRequest->addParameter('tradeType', ObjectSerializer::sanitizeForSerialization($request->getTradeType(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

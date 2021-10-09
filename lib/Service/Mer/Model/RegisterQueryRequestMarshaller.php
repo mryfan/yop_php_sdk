@@ -69,11 +69,10 @@ class RegisterQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
-        $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
-
         if($request->getRequestNo() != null){
             $internalRequest->addParameter('requestNo', ObjectSerializer::sanitizeForSerialization($request->getRequestNo(), 'string'));
         }
+        $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;
     }

@@ -38,12 +38,13 @@ $request->setParentMerchantNo("parentMerchantNo_example");
 $request->setMerchantNo("merchantNo_example");
 $request->setOrderId("orderId_example");
 $request->setOrderAmount(1.2);
-$request->setExpiredTime("2021-09-13 19:24:33");
+$request->setExpiredTime("2021-10-09 10:09:43");
 $request->setNotifyUrl("notifyUrl_example");
 $request->setMemo("memo_example");
 $request->setGoodsName("goodsName_example");
 $request->setFundProcessType("fundProcessType_example");
 $request->setCsUrl("csUrl_example");
+$request->setCheckType("checkType_example");
 
 try {
     $response = $api_client->bankTransferPay($request);
@@ -68,6 +69,7 @@ Name | Type | Description  | Notes
  **goodsName** | **string**|  | [optional]
  **fundProcessType** | **string**|  | [optional]
  **csUrl** | **string**|  | [optional]
+ **checkType** | **string**|  | [optional]
 
 ### Return type
 [**\Yeepay\Yop\Sdk\Service\Frontcashier\Model\BankTransferPayAPIOfflineTransferResponseDTOResult**](../Model/BankTransferPayAPIOfflineTransferResponseDTOResult.md)

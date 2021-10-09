@@ -70,6 +70,18 @@ class FileGetRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getMerchantNo() != null){
+            $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
+        if($request->getParentMerchantNo() != null){
+            $internalRequest->addParameter('parentMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getParentMerchantNo(), 'string'));
+        }
+        if($request->getSettleRequestNo() != null){
+            $internalRequest->addParameter('settleRequestNo', ObjectSerializer::sanitizeForSerialization($request->getSettleRequestNo(), 'string'));
+        }
+        if($request->getSettleDate() != null){
+            $internalRequest->addParameter('settleDate', ObjectSerializer::sanitizeForSerialization($request->getSettleDate(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

@@ -29,7 +29,7 @@ $request->setParentMerchantNo("10040012345");
 $request->setMerchantNo("10040054321");
 $request->setOrderId("orderId12345");
 $request->setOrderAmount(0.01);
-$request->setExpiredTime("2021-09-13 19:24:33");
+$request->setExpiredTime("2021-10-09 10:09:44");
 $request->setNotifyUrl("https://notify.merchant.com/xxx");
 $request->setMemo("memo_example");
 $request->setGoodsName("旺仔牛奶");
@@ -122,7 +122,7 @@ $request->setParentMerchantNo("10040012345");
 $request->setMerchantNo("10040054321");
 $request->setOrderId("orderId12345");
 $request->setOrderAmount(0.01);
-$request->setExpiredTime("2021-09-13 19:24:33");
+$request->setExpiredTime("2021-10-09 10:09:44");
 $request->setNotifyUrl("https://notify.merchant.com/xxx");
 $request->setRedirectUrl("https://notify.merchant.com/xxx");
 $request->setMemo("memo_example");
@@ -210,8 +210,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_client = Yeepay\Yop\Sdk\Service\Aggpay\AggpayClientBuilder::builder()->build();
 $request = new Yeepay\Yop\Sdk\Service\Aggpay\Model\ViolationWechatChannelRequest();
 $request->setParentMerchantNo("parentMerchantNo_example");
-$request->setBeginTime("2021-09-13 19:24:33");
-$request->setEndTime("2021-09-13 19:24:33");
+$request->setBeginTime("2021-10-09 10:09:44");
+$request->setEndTime("2021-10-09 10:09:44");
 
 try {
     $response = $api_client->violationWechatChannel($request);

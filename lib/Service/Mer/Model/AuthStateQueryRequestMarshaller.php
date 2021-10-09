@@ -69,6 +69,15 @@ class AuthStateQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getMerchantNo() != null){
+            $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
+        if($request->getReportMerchantNo() != null){
+            $internalRequest->addParameter('reportMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getReportMerchantNo(), 'string'));
+        }
+        if($request->getFeeType() != null){
+            $internalRequest->addParameter('feeType', ObjectSerializer::sanitizeForSerialization($request->getFeeType(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

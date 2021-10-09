@@ -36,7 +36,7 @@ class SettleClientTest extends TestCase
         $request->setParentMerchantNo("parentMerchantNo_example");
         $request->setMerchantNo("merchantNo_example");
         $request->setOperatePeriod("operatePeriod_example");
-        $request->setEndTime("2021-09-13 19:24:34");
+        $request->setEndTime("2021-10-09 10:09:45");
         try{
             $response = self::$client->balanceQuery($request);
             print_r($response->getResult());
@@ -72,8 +72,8 @@ class SettleClientTest extends TestCase
         $request->setParentMerchantNo("parentMerchantNo_example");
         $request->setMerchantNo("merchantNo_example");
         $request->setSettleRequestNo("settleRequestNo_example");
-        $request->setSettleRequestBeginTime("2021-09-13 19:24:34");
-        $request->setSettleRequestEndTime("2021-09-13 19:24:34");
+        $request->setSettleRequestBeginTime("2021-10-09 10:09:45");
+        $request->setSettleRequestEndTime("2021-10-09 10:09:45");
         try{
             $response = self::$client->recordsQuery($request);
             print_r($response->getResult());
@@ -92,7 +92,7 @@ class SettleClientTest extends TestCase
         $request->setMerchantNo("merchantNo_example");
         $request->setSettleRequestNo("settleRequestNo_example");
         $request->setOperatePeriod("operatePeriod_example");
-        $request->setEndTime("2021-09-13 19:24:34");
+        $request->setEndTime("2021-10-09 10:09:45");
         $request->setNotifyUrl("notifyUrl_example");
         try{
             $response = self::$client->selfSettleApply($request);

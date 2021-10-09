@@ -69,6 +69,21 @@ class RecordsQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getParentMerchantNo() != null){
+            $internalRequest->addParameter('parentMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getParentMerchantNo(), 'string'));
+        }
+        if($request->getMerchantNo() != null){
+            $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
+        if($request->getSettleRequestNo() != null){
+            $internalRequest->addParameter('settleRequestNo', ObjectSerializer::sanitizeForSerialization($request->getSettleRequestNo(), 'string'));
+        }
+        if($request->getSettleRequestBeginTime() != null){
+            $internalRequest->addParameter('settleRequestBeginTime', ObjectSerializer::sanitizeForSerialization($request->getSettleRequestBeginTime(), 'string', 'date-time'));
+        }
+        if($request->getSettleRequestEndTime() != null){
+            $internalRequest->addParameter('settleRequestEndTime', ObjectSerializer::sanitizeForSerialization($request->getSettleRequestEndTime(), 'string', 'date-time'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

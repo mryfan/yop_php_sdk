@@ -69,6 +69,18 @@ class EnterpriseAutoPaymentQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getMerchantNo() != null){
+            $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
+        if($request->getOrderId() != null){
+            $internalRequest->addParameter('orderId', ObjectSerializer::sanitizeForSerialization($request->getOrderId(), 'string'));
+        }
+        if($request->getOrderDate() != null){
+            $internalRequest->addParameter('orderDate', ObjectSerializer::sanitizeForSerialization($request->getOrderDate(), 'string'));
+        }
+        if($request->getUniqueOrderNo() != null){
+            $internalRequest->addParameter('uniqueOrderNo', ObjectSerializer::sanitizeForSerialization($request->getUniqueOrderNo(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

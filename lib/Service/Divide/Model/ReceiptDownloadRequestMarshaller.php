@@ -69,6 +69,21 @@ class ReceiptDownloadRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getParentMerchantNo() != null){
+            $internalRequest->addParameter('parentMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getParentMerchantNo(), 'string'));
+        }
+        if($request->getMerchantNo() != null){
+            $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
+        if($request->getUniqueOrderNo() != null){
+            $internalRequest->addParameter('uniqueOrderNo', ObjectSerializer::sanitizeForSerialization($request->getUniqueOrderNo(), 'string'));
+        }
+        if($request->getDivideRequestId() != null){
+            $internalRequest->addParameter('divideRequestId', ObjectSerializer::sanitizeForSerialization($request->getDivideRequestId(), 'string'));
+        }
+        if($request->getLedgerNo() != null){
+            $internalRequest->addParameter('ledgerNo', ObjectSerializer::sanitizeForSerialization($request->getLedgerNo(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

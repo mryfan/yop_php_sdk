@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**payOrder**](Account.md#payOrder) | **POST** /rest/v1.0/account/pay/order | 付款-下单
 [**payQuery**](Account.md#payQuery) | **GET** /rest/v1.0/account/pay/query | 付款-查询
 [**receiptGet**](Account.md#receiptGet) | **GET** /rest/v1.0/account/receipt/get | 电子回单-下载
+[**rechargeBatchQuery**](Account.md#rechargeBatchQuery) | **GET** /rest/v1.0/account/recharge/batch-query | 充值订单批量查询
 [**rechargeOnlinebankOrder**](Account.md#rechargeOnlinebankOrder) | **POST** /rest/v1.0/account/recharge/onlinebank/order | 充值-网银下单
 [**rechargeOrder**](Account.md#rechargeOrder) | **POST** /rest/v1.0/account/recharge/order | 充值-银行汇款下单
 [**rechargeQuery**](Account.md#rechargeQuery) | **GET** /rest/v1.0/account/recharge/query | 充值-查询
@@ -766,6 +767,53 @@ Name | Type | Description  | Notes
 
 ### Return type
 [**\Yeepay\Yop\Sdk\Service\Account\Model\ReceiptGetReceiptRespDTOResult**](../Model/ReceiptGetReceiptRespDTOResult.md)
+### Authorization
+
+YOP-SM2-SM3
+
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+# **rechargeBatchQuery**
+RechargeBatchQueryResponse rechargeBatchQuery(RechargeBatchQueryRequest request)
+
+充值订单批量查询
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_client = Yeepay\Yop\Sdk\Service\Account\AccountClientBuilder::builder()->build();
+$request = new Yeepay\Yop\Sdk\Service\Account\Model\RechargeBatchQueryRequest();
+$request->setParentMerchantNo("parentMerchantNo_example");
+$request->setMerchantNo("merchantNo_example");
+$request->setQueryStartDate("queryStartDate_example");
+$request->setQueryEndDate("queryEndDate_example");
+
+try {
+    $response = $api_client->rechargeBatchQuery($request);
+    print_r($response->getResult());
+}catch (\Exception $e) {
+    echo 'Exception when calling AccountClient->rechargeBatchQuery: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **parentMerchantNo** | **string**| 发起方商户编号&lt;br&gt;（标准商户收付款方案中此参数与商编一致，平台商户收付款方案中此参数为平台商商户编号） | [optional]
+ **merchantNo** | **string**|  | [optional]
+ **queryStartDate** | **string**| 查询开始时间&lt;br&gt;（支持获取最长周期为30天的充值记录,&lt;br&gt;支持yyyy-MM-dd格式，示例：2021-09-17 即2021-09-17 00:00:00开始） | [optional]
+ **queryEndDate** | **string**| 查询结束时间&lt;br&gt;（支持获取最长周期为30天的充值记录，&lt;br&gt;支持yyyy-MM-dd格式，示例：2021-09-17 即2021-09-17 23:59:59结束) | [optional]
+
+### Return type
+[**\Yeepay\Yop\Sdk\Service\Account\Model\RechargeBatchQueryRechargeQueryMultiApiRespDTOResult**](../Model/RechargeBatchQueryRechargeQueryMultiApiRespDTOResult.md)
 ### Authorization
 
 YOP-SM2-SM3

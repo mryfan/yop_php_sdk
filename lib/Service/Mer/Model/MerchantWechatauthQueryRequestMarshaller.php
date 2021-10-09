@@ -69,6 +69,18 @@ class MerchantWechatauthQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getApplymentId() != null){
+            $internalRequest->addParameter('applymentId', ObjectSerializer::sanitizeForSerialization($request->getApplymentId(), 'string'));
+        }
+        if($request->getSubMerchantNo() != null){
+            $internalRequest->addParameter('subMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getSubMerchantNo(), 'string'));
+        }
+        if($request->getReportFee() != null){
+            $internalRequest->addParameter('reportFee', ObjectSerializer::sanitizeForSerialization($request->getReportFee(), 'string'));
+        }
+        if($request->getRequestNo() != null){
+            $internalRequest->addParameter('requestNo', ObjectSerializer::sanitizeForSerialization($request->getRequestNo(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

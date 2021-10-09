@@ -39,6 +39,7 @@ class AccountClientBuilder
         self::$authorizationReqRegistry->register('payOrder', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));
         self::$authorizationReqRegistry->register('payQuery', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));
         self::$authorizationReqRegistry->register('receiptGet', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));
+        self::$authorizationReqRegistry->register('rechargeBatchQuery', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));
         self::$authorizationReqRegistry->register('rechargeOnlinebankOrder', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));
         self::$authorizationReqRegistry->register('rechargeOrder', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));
         self::$authorizationReqRegistry->register('rechargeQuery', AuthorizationReqSupport::getAuthorizationReq('YOP-RSA2048-SHA256'));

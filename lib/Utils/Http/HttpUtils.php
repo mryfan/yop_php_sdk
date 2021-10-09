@@ -103,8 +103,9 @@ class HttpUtils
     public static function urlEncode($value)
     {
         $result = '';
-        for ($i = 0; $i < strlen($value); ++$i) {
-            $result .= self::$PERCENT_ENCODED_STRINGS[ord($value[$i])];
+        $valueStr = (string)$value;
+        for ($i = 0; $i < strlen($valueStr); ++$i) {
+            $result .= self::$PERCENT_ENCODED_STRINGS[ord($valueStr[$i])];
         }
         return $result;
     }

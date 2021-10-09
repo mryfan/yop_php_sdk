@@ -48,6 +48,10 @@ class BankTransferPayRequest extends BaseRequest
      * @var string
      */
     private $csUrl;
+    /**
+     * @var string
+     */
+    private $checkType;
 
     /**
      * Gets parentMerchantNo
@@ -257,6 +261,27 @@ class BankTransferPayRequest extends BaseRequest
     public function setCsUrl($csUrl)
     {
         $this->csUrl = $csUrl;
+        return $this;
+    }
+    /**
+     * Gets checkType
+     *
+     * @return string
+     */
+    public function getCheckType()
+    {
+        return $this->checkType;
+    }
+
+    /**
+     * Sets checkType
+     *
+     * @param string $checkType
+     * @return BankTransferPayRequest
+     */
+    public function setCheckType($checkType)
+    {
+        $this->checkType = $checkType;
         return $this;
     }
 

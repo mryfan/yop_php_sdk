@@ -24,7 +24,7 @@ $request->setMerchantNo("merchantNo_example");
 $request->setOrderId("orderId_example");
 $request->setGoodsName("goodsName_example");
 $request->setAmount(1.2);
-$request->setExpiredTime("2021-09-13 19:24:35");
+$request->setExpiredTime("2021-10-09 10:09:48");
 $request->setNotifyUrl("https://notify.merchant.com/xxx");
 $request->setScene("scene_example");
 $request->setFundProcessType("fundProcessType_example");

@@ -273,6 +273,20 @@ class AccountClient
         return $this->clientHandler->execute($clientExecutionParams);
     }
     /**
+     * @param Model\RechargeBatchQueryRequest $request
+     * @return Model\RechargeBatchQueryResponse
+     * @throws YopClientException
+     */
+    public function rechargeBatchQuery(Model\RechargeBatchQueryRequest $request)
+    {
+        if ($request == null) {
+            throw new YopClientException("request is required.");
+        }
+        $clientExecutionParams = new ClientExecutionParams($request, Model\RechargeBatchQueryRequestMarshaller::getInstance(),
+            Model\RechargeBatchQueryResponseUnMarshaller::getInstance());
+        return $this->clientHandler->execute($clientExecutionParams);
+    }
+    /**
      * @param Model\RechargeOnlinebankOrderRequest $request
      * @return Model\RechargeOnlinebankOrderResponse
      * @throws YopClientException

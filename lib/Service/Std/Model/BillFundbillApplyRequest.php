@@ -23,6 +23,10 @@ class BillFundbillApplyRequest extends BaseRequest
     /**
      * @var string
      */
+    private $subMerchantNo;
+    /**
+     * @var string
+     */
     private $accountType;
     /**
      * @var string
@@ -90,6 +94,27 @@ class BillFundbillApplyRequest extends BaseRequest
     public function setMerchantNo($merchantNo)
     {
         $this->merchantNo = $merchantNo;
+        return $this;
+    }
+    /**
+     * Gets subMerchantNo
+     *
+     * @return string
+     */
+    public function getSubMerchantNo()
+    {
+        return $this->subMerchantNo;
+    }
+
+    /**
+     * Sets subMerchantNo
+     *
+     * @param string $subMerchantNo
+     * @return BillFundbillApplyRequest
+     */
+    public function setSubMerchantNo($subMerchantNo)
+    {
+        $this->subMerchantNo = $subMerchantNo;
         return $this;
     }
     /**

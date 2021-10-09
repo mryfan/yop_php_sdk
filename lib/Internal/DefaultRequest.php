@@ -138,8 +138,7 @@ class DefaultRequest implements Request
     public function addParameter($name, $value)
     {
         if (isset($this->parameters[$name])) {
-            $values = $this->parameters[$name];
-            $values[] = $value;
+            $this->parameters[$name][] = $value;
         } else {
             $this->parameters[$name] = array($value);
         }

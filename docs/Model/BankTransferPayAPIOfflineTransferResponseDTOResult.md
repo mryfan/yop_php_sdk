@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **code** | **string** | 返回码 | [optional] 
 **msg** | **string** | 返回信息 | [optional] 
 **payStatus** | **string** | 支付状态 | [optional] 
+**remitRemarkCode** | **string** | 附言 | [optional] 
 **receiveName** | **string** | 收款方名称 | [optional] 
 **receiveAccountNo** | **string** | 收款方账号 | [optional] 
 **accountName** | **string** | 收款方开户行 | [optional] 

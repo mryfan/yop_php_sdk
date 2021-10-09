@@ -305,6 +305,24 @@ class AccountClientTest extends TestCase
     /**
      * @test
      */
+    public function rechargeBatchQueryTest()
+    {
+        $request = new Model\RechargeBatchQueryRequest();
+
+        $request->setParentMerchantNo("parentMerchantNo_example");
+        $request->setMerchantNo("merchantNo_example");
+        $request->setQueryStartDate("queryStartDate_example");
+        $request->setQueryEndDate("queryEndDate_example");
+        try{
+            $response = self::$client->rechargeBatchQuery($request);
+            print_r($response->getResult());
+        }catch (\Exception $e) {
+            echo 'Exception when calling AccountClient->rechargeBatchQuery: ', $e->getMessage(), PHP_EOL;
+        }
+    }
+    /**
+     * @test
+     */
     public function rechargeOnlinebankOrderTest()
     {
         $request = new Model\RechargeOnlinebankOrderRequest();

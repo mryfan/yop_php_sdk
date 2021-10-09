@@ -72,9 +72,11 @@ class ProductFeeQueryRequestMarshaller implements RequestMarshaller
         if($request->getParentMerchantNo() != null){
             $internalRequest->addParameter('parentMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getParentMerchantNo(), 'string'));
         }
-
         if($request->getMerchantNo() != null){
             $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
+        }
+        if($request->getProductCode() != null){
+            $internalRequest->addParameter('productCode', ObjectSerializer::sanitizeForSerialization($request->getProductCode(), 'string'));
         }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 

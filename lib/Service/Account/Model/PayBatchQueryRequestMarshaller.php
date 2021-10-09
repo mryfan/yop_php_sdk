@@ -69,6 +69,9 @@ class PayBatchQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getBatchNo() != null){
+            $internalRequest->addParameter('batchNo', ObjectSerializer::sanitizeForSerialization($request->getBatchNo(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

@@ -72,6 +72,7 @@ $request = new Yeepay\Yop\Sdk\Service\Std\Model\BillFundbillApplyRequest();
 $request->setStartDate("startDate_example");
 $request->setEndDate("endDate_example");
 $request->setMerchantNo("merchantNo_example");
+$request->setSubMerchantNo("subMerchantNo_example");
 $request->setAccountType("accountType_example");
 $request->setNotifyUrl("notifyUrl_example");
 
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
  **startDate** | **string**|  | [optional]
  **endDate** | **string**|  | [optional]
  **merchantNo** | **string**|  | [optional]
+ **subMerchantNo** | **string**|  | [optional]
  **accountType** | **string**|  | [optional]
  **notifyUrl** | **string**|  | [optional]
 

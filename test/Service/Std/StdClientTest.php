@@ -52,6 +52,7 @@ class StdClientTest extends TestCase
         $request->setStartDate("startDate_example");
         $request->setEndDate("endDate_example");
         $request->setMerchantNo("merchantNo_example");
+        $request->setSubMerchantNo("subMerchantNo_example");
         $request->setAccountType("accountType_example");
         $request->setNotifyUrl("notifyUrl_example");
         try{

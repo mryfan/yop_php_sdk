@@ -69,6 +69,12 @@ class MerchantDisposeQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getRequestNo() != null){
+            $internalRequest->addParameter('requestNo', ObjectSerializer::sanitizeForSerialization($request->getRequestNo(), 'string'));
+        }
+        if($request->getApplicationNo() != null){
+            $internalRequest->addParameter('applicationNo', ObjectSerializer::sanitizeForSerialization($request->getApplicationNo(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

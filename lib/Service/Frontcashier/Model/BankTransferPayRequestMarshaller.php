@@ -99,6 +99,9 @@ class BankTransferPayRequestMarshaller implements RequestMarshaller
         if($request->getCsUrl() != null){
             $internalRequest->addParameter('csUrl', ObjectSerializer::sanitizeForSerialization($request->getCsUrl(), 'string'));
         }
+        if($request->getCheckType() != null){
+            $internalRequest->addParameter('checkType', ObjectSerializer::sanitizeForSerialization($request->getCheckType(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

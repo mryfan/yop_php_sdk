@@ -70,6 +70,12 @@ class DownloadRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
+        if($request->getBizType() != null){
+            $internalRequest->addParameter('bizType', ObjectSerializer::sanitizeForSerialization($request->getBizType(), 'string'));
+        }
+        if($request->getBillDate() != null){
+            $internalRequest->addParameter('billDate', ObjectSerializer::sanitizeForSerialization($request->getBillDate(), 'string'));
+        }
         $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
 
         return $internalRequest;

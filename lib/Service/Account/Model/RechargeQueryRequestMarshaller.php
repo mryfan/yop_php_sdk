@@ -69,21 +69,20 @@ class RechargeQueryRequestMarshaller implements RequestMarshaller
         if (!isset($internalRequest->getHeaders()[Headers::YOP_REQUEST_ID])) {
             $internalRequest->addHeader(Headers::YOP_REQUEST_ID, UUIDUtils::uuid());
         }
-        $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
-
         if($request->getParentMerchantNo() != null){
             $internalRequest->addParameter('parentMerchantNo', ObjectSerializer::sanitizeForSerialization($request->getParentMerchantNo(), 'string'));
         }
         if($request->getMerchantNo() != null){
             $internalRequest->addParameter('merchantNo', ObjectSerializer::sanitizeForSerialization($request->getMerchantNo(), 'string'));
         }
-        if($request->getRequestNo() != null){
-            $internalRequest->addParameter('requestNo', ObjectSerializer::sanitizeForSerialization($request->getRequestNo(), 'string'));
-        }
-
         if($request->getOrderNo() != null){
             $internalRequest->addParameter('orderNo', ObjectSerializer::sanitizeForSerialization($request->getOrderNo(), 'string'));
         }
+        if($request->getRequestNo() != null){
+            $internalRequest->addParameter('requestNo', ObjectSerializer::sanitizeForSerialization($request->getRequestNo(), 'string'));
+        }
+        $internalRequest->addHeader(Headers::CONTENT_TYPE, $this->contentType);
+
         return $internalRequest;
     }
 }

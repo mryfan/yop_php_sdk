@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **merchantNo** | **string** | 商户编号 | [optional] 
 **applicationStatus** | **string** | 申请状态 | [optional] 
 **auditOpinion** | **string** | 审核意见 | [optional] 
+**progressDescription** | **string** | 入网进度说明 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

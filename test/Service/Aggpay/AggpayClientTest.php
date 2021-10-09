@@ -37,7 +37,7 @@ class AggpayClientTest extends TestCase
         $request->setMerchantNo("10040054321");
         $request->setOrderId("orderId12345");
         $request->setOrderAmount(0.01);
-        $request->setExpiredTime("2021-09-13 19:24:33");
+        $request->setExpiredTime("2021-10-09 10:09:44");
         $request->setNotifyUrl("https://notify.merchant.com/xxx");
         $request->setMemo("memo_example");
         $request->setGoodsName("旺仔牛奶");
@@ -78,7 +78,7 @@ class AggpayClientTest extends TestCase
         $request->setMerchantNo("10040054321");
         $request->setOrderId("orderId12345");
         $request->setOrderAmount(0.01);
-        $request->setExpiredTime("2021-09-13 19:24:33");
+        $request->setExpiredTime("2021-10-09 10:09:44");
         $request->setNotifyUrl("https://notify.merchant.com/xxx");
         $request->setRedirectUrl("https://notify.merchant.com/xxx");
         $request->setMemo("memo_example");
@@ -114,8 +114,8 @@ class AggpayClientTest extends TestCase
         $request = new Model\ViolationWechatChannelRequest();
 
         $request->setParentMerchantNo("parentMerchantNo_example");
-        $request->setBeginTime("2021-09-13 19:24:33");
-        $request->setEndTime("2021-09-13 19:24:33");
+        $request->setBeginTime("2021-10-09 10:09:44");
+        $request->setEndTime("2021-10-09 10:09:44");
         try{
             $response = self::$client->violationWechatChannel($request);
             print_r($response->getResult());
